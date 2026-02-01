@@ -32,8 +32,9 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <div className="custom-cursor">
-      <span className="cursor-arrow" />
-    </div>
-  );
+  <div className="custom-cursor">
+    <span className="cursor-arrow" />
+      </div>
+);
+
 }

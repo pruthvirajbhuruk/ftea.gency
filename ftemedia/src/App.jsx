@@ -13,15 +13,12 @@ export default function App() {
   return (
     <>
       <CustomCursor />
+      <Hero />
       <Header />
       <Promo />
-      <Hero />
-      <Services />
-      <Clients />
-      <Testimonials />
-      <HowItWorks />
-      <Contact />
+      <Services/>
       <Footer />
+      
     </>
   );
 }

@@ -1,24 +1,50 @@
-export default function Header() {
-  return (
-    <header>
-      <nav className="nav">
-        <div className="brand">
-          <div className="logo">FM</div>
-          <div>
-            <div style={{ fontWeight: 800 }}>FTE MEDIA</div>
-            <div style={{ fontSize: 12, color: "var(--muted)" }}>
-              Website Dev • Clipping
-            </div>
-          </div>
-        </div>
+import { useState } from "react";
 
-        <div className="navlinks">
-          <a href="#services" className="hover-target">Services</a>
-          <a href="#clients" className="hover-target">Clients</a>
-          <a href="#testimonials" className="hover-target">Testimonials</a>
-          <a href="#contact" className="cta hover-target">BOOK A CALL</a>
-        </div>
+export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="premium-header">
+      {/* LEFT – Brand */}
+      <div className="header-brand">
+  <span className="brand-mark">✦</span>
+  <span className="brand-text">FTE</span>
+</div>
+
+      {/* CENTER – Navigation in floating pill */}
+      <nav className="header-nav-pill">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
       </nav>
+
+      {/* RIGHT – CTA */}
+      <div className="header-cta">
+        <button className="cta-pill">Book a Call</button>
+      </div>
+
+      {/* MOBILE TOGGLE */}
+      <button
+        className={`mobile-toggle ${open ? "open" : ""}`}
+        onClick={() => setOpen(!open)}
+        aria-label="Menu"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu ${open ? "open" : ""}`}>
+        <a href="#home" onClick={() => setOpen(false)}>Home</a>
+        <a href="#services" onClick={() => setOpen(false)}>Services</a>
+        <a href="#cases" onClick={() => setOpen(false)}>Case Studies</a>
+        <a href="#blog" onClick={() => setOpen(false)}>Blog</a>
+        <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+        <button className="cta-pill mobile-cta">Book a Call</button>
+      </div>
     </header>
   );
 }
